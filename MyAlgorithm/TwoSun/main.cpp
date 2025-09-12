@@ -23,10 +23,9 @@
 
 #include <iostream>
 #include <vector>
-#include <unordered_map> // 更高效的哈希表
+#include <unordered_map> 
 using namespace std;
 
-// 函数声明（放在 main 之前）
 vector<int> twoSum(const vector<int>& nums, int target);
 
 int main() {    
@@ -42,11 +41,8 @@ int main() {
     cout << "请输入目标值: ";
     cin >> target;
     
-
-    // 调用函数
     vector<int> result = twoSum(nums, target);
 
-    // 输出结果
     cout << "输出: [";
     for (int i = 0; i < result.size(); ++i) {
         cout << result[i];
@@ -57,23 +53,15 @@ int main() {
     return 0;
 }
 
-// 函数定义
+
 vector<int> twoSum(const vector<int>& nums, int target) {
-    unordered_map<int, int> numToIndex; // 哈希表：值 -> 索引
-
+    unordered_map<int, int> numToIndex;
     for (int i = 0; i < nums.size(); i++) {
-        int complement = target - nums[i]; // 需要寻找的另一个数 
-
-        // 检查 complement 是否已在哈希表中
+        int complement = target - nums[i];   
         if (numToIndex.find(complement) != numToIndex.end()) {
-            // 找到了！返回两个索引
             return { numToIndex[complement], i };
         }
-
-        // 将当前数字和其索引存入哈希表
         numToIndex[nums[i]] = i;
     }
-
-    // 根据题意，总会有解，这里为了编译通过返回空向量
     return {};
 }
