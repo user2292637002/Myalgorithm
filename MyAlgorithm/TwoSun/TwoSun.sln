@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReverseString", "..\Reverse
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedListCycle", "..\LinkedListCycle\LinkedListCycle.vcxproj", "{7AF77BA1-5C42-4CBB-85A7-D582E45C2D61}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MergeSortedArray", "..\MergeSortedArray\MergeSortedArray.vcxproj", "{1AF3088E-9894-4A5D-B7AC-7E8BFFAA2497}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{7AF77BA1-5C42-4CBB-85A7-D582E45C2D61}.Release|x64.Build.0 = Release|x64
 		{7AF77BA1-5C42-4CBB-85A7-D582E45C2D61}.Release|x86.ActiveCfg = Release|Win32
 		{7AF77BA1-5C42-4CBB-85A7-D582E45C2D61}.Release|x86.Build.0 = Release|Win32
+		{1AF3088E-9894-4A5D-B7AC-7E8BFFAA2497}.Debug|x64.ActiveCfg = Debug|x64
+		{1AF3088E-9894-4A5D-B7AC-7E8BFFAA2497}.Debug|x64.Build.0 = Debug|x64
+		{1AF3088E-9894-4A5D-B7AC-7E8BFFAA2497}.Debug|x86.ActiveCfg = Debug|Win32
+		{1AF3088E-9894-4A5D-B7AC-7E8BFFAA2497}.Debug|x86.Build.0 = Debug|Win32
+		{1AF3088E-9894-4A5D-B7AC-7E8BFFAA2497}.Release|x64.ActiveCfg = Release|x64
+		{1AF3088E-9894-4A5D-B7AC-7E8BFFAA2497}.Release|x64.Build.0 = Release|x64
+		{1AF3088E-9894-4A5D-B7AC-7E8BFFAA2497}.Release|x86.ActiveCfg = Release|Win32
+		{1AF3088E-9894-4A5D-B7AC-7E8BFFAA2497}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
