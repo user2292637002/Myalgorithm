@@ -114,7 +114,7 @@ TreeNode* CreateBinaryTree_PreIn(const int pre[], const int in[], int n)
 }
 
 
-TreeNode* CreateBinaryTree_PostIn(const int post[], const int in[], int n)
-{
-
-}
+//TreeNode* CreateBinaryTree_PostIn(const int post[], const int in[], int n)
+//{
+//
+//}
