@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4730076a-9681-48bf-868e-cf781602491e}</ProjectGuid>
-    <RootNamespace>LRUCache</RootNamespace>
+    <ProjectGuid>{9ba65e37-07bb-4592-9d49-82b7f6878471}</ProjectGuid>
+    <RootNamespace>MultiplyStrings</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

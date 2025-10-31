@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4730076a-9681-48bf-868e-cf781602491e}</ProjectGuid>
-    <RootNamespace>LRUCache</RootNamespace>
+    <ProjectGuid>{00fc9cee-5d27-4aa5-af82-26eab1a5e580}</ProjectGuid>
+    <RootNamespace>CourseSchedule</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
