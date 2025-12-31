@@ -59,6 +59,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tree", "..\Tree\Tree.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RedBlackTree", "..\RedBlackTree\RedBlackTree.vcxproj", "{436FB667-D5D9-4058-8C70-987DD55C7129}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LCA", "..\LCA\LCA.vcxproj", "{AEACFA8A-B017-4796-BC0C-4A628BA48536}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -291,6 +293,14 @@ Global
 		{436FB667-D5D9-4058-8C70-987DD55C7129}.Release|x64.Build.0 = Release|x64
 		{436FB667-D5D9-4058-8C70-987DD55C7129}.Release|x86.ActiveCfg = Release|Win32
 		{436FB667-D5D9-4058-8C70-987DD55C7129}.Release|x86.Build.0 = Release|Win32
+		{AEACFA8A-B017-4796-BC0C-4A628BA48536}.Debug|x64.ActiveCfg = Debug|x64
+		{AEACFA8A-B017-4796-BC0C-4A628BA48536}.Debug|x64.Build.0 = Debug|x64
+		{AEACFA8A-B017-4796-BC0C-4A628BA48536}.Debug|x86.ActiveCfg = Debug|Win32
+		{AEACFA8A-B017-4796-BC0C-4A628BA48536}.Debug|x86.Build.0 = Debug|Win32
+		{AEACFA8A-B017-4796-BC0C-4A628BA48536}.Release|x64.ActiveCfg = Release|x64
+		{AEACFA8A-B017-4796-BC0C-4A628BA48536}.Release|x64.Build.0 = Release|x64
+		{AEACFA8A-B017-4796-BC0C-4A628BA48536}.Release|x86.ActiveCfg = Release|Win32
+		{AEACFA8A-B017-4796-BC0C-4A628BA48536}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
