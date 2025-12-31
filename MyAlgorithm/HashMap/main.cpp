@@ -6,25 +6,11 @@ int main()
 {
     HashMap<string, int> map;
 
-    map.insert("apple", 10);
+    map.insert("apple1", 10);
     map.insert("banana", 20);
     map.insert("cherry", 30);
+    map.insert("apple2", 99);
 
-    auto* value = map.find("banana");
-    if (value)
-    {
-        cout << "found banana:" << *value << endl;
-    }
-
-    map.insert("apple", 99);
-
-    map.remove("cherry");
-
-    value = map.find("apple");
-    if (value)
-    {
-        cout << "Apple:" << *value << endl;
-    }
 
     map.debugPrint();
 
