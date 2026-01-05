@@ -7,9 +7,10 @@ using namespace std;
 
 /// @brief 二叉树节点结构体
 /// 包含左右子节点指针和父节点指针，用于构建带父节点指针的二叉树
+template<typename T>
 struct btnode
 {
-    int data;       // 节点数据
+    T data;       // 节点数据
 	btnode* left;   // 左子节点指针
 	btnode* right;  // 右子节点指针
 	btnode* parent; // 父节点指针
@@ -17,11 +18,12 @@ struct btnode
 
 /// @brief 二叉树类
 /// 实现了一个带父节点指针的二叉树，支持层序遍历初始化
+template<typename T>
 class  btree
 {
 private:
-	btnode* root;           // 根节点指针
-	void Clear(btnode* node); // 递归清理节点内存的辅助函数
+	btnode<T>* root;           // 根节点指针
+	void Clear(btnode<T>* node); // 递归清理节点内存的辅助函数
     int height;             // 树的高度（成员变量，但当前未使用）
 public:
 	btree();                // 构造函数，初始化根节点
@@ -30,7 +32,7 @@ public:
     /// @param arr 节点数据数组
     /// @param n 节点总个数（包括根节点）
     /// 按照层序遍历的顺序从左到右、从上到下创建节点
-    void InitTree(int *arr,int n);
+    void InitTree(T *arr,int n);
     /// @brief 获取树的高度
     /// @return 返回树的高度
     int GetHeight();
@@ -43,14 +45,16 @@ public:
 
 /// @brief 构造函数
 /// 初始化根节点指针为空
-btree:: btree()
+template<typename T>
+btree<T>:: btree()
 {
 	root = nullptr;
 }
 
 /// @brief 析构函数
 /// 释放整棵树的所有节点内存
-btree::~ btree()
+template<typename T>
+btree<T>::~ btree<T>()
 {
     Clear(root);      // 清理所有节点
     root = nullptr;   // 将根节点指针置空
@@ -59,15 +63,16 @@ btree::~ btree()
 /// @brief 清理节点内存的辅助函数
 /// @param node 要清理的子树根节点
 /// 使用栈进行非递归的后序遍历，释放所有节点内存
-void btree::Clear(btnode* node)
+template<typename T>
+void btree<T>::Clear(btnode<T>* node)
 {
 	if(node == nullptr)
         return;
-    stack<btnode*> s;  // 使用栈进行非递归遍历
+    stack<btnode<T>*> s;  // 使用栈进行非递归遍历
     s.push(node);      // 将根节点入栈
     while (!s.empty())
     {
-        btnode* curr = s.top();
+        btnode<T>* curr = s.top();
         s.pop();
         // 先处理右子树，再处理左子树（因为栈是后进先出）
         if(curr->right != nullptr)
@@ -83,7 +88,8 @@ void btree::Clear(btnode* node)
 /// @param n 节点总个数（包括根节点）
 /// 按照层序遍历的顺序从左到右、从上到下创建节点
 /// 使用队列维护层序遍历的顺序，确保正确构建完全二叉树
-void btree::InitTree(int* arr,int n)
+template<typename T>
+void btree<T>::InitTree(T* arr,int n)
 {
     // 参数检查
     if(arr == nullptr || n <= 0)
@@ -97,7 +103,7 @@ void btree::InitTree(int* arr,int n)
     }
     
     // 创建根节点
-    root = (btnode*)malloc(sizeof(btnode));
+    root = (btnode<T>*)malloc(sizeof(btnode<T>));
     if(root == nullptr)  // 内存分配失败检查
         return;
     root->left = nullptr;
@@ -106,18 +112,18 @@ void btree::InitTree(int* arr,int n)
     root->data = arr[0];
     
     // 使用队列进行层序遍历构建
-    queue<btnode*> q;
+    queue<btnode<T>*> q;
     q.push(root);
     
     // 从第二个节点开始（索引1）创建子节点
     for(int i = 1; i < n; i++)
     {
-        btnode* curr = q.front();
+        btnode<T>* curr = q.front();
         
         // 优先创建左子节点
         if(curr->left == nullptr)
         {
-            btnode* newNode = (btnode*)malloc(sizeof(btnode));
+            btnode<T>* newNode = (btnode<T>*)malloc(sizeof(btnode<T>));
             if(newNode == nullptr)  // 内存分配失败检查
                 break;
             newNode->left = nullptr;
@@ -130,7 +136,7 @@ void btree::InitTree(int* arr,int n)
         // 如果左子节点已存在，创建右子节点
         else if(curr->right == nullptr)
         {
-            btnode* newNode = (btnode*)malloc(sizeof(btnode));
+            btnode<T>* newNode = (btnode<T>*)malloc(sizeof(btnode<T>));
             if(newNode == nullptr)  // 内存分配失败检查
                 break;
             newNode->left = nullptr;
@@ -148,11 +154,12 @@ void btree::InitTree(int* arr,int n)
 /// @return 返回树的高度（根节点高度为1）
 /// 因为创建树时是层序遍历，且是从左到右创建，所以左子树一定比右子树高或相等
 /// 只需沿着左子树路径计算高度即可
-int btree::GetHeight()
+template<typename T>
+int btree<T>::GetHeight()
 {
     if(root == nullptr)
         return 0;
-    btnode* curr = root;
+    btnode<T>* curr = root;
     int height = 1;  // 根节点高度为1
     // 沿着左子树路径向下遍历，计算树的高度
     while (curr != nullptr)
@@ -172,17 +179,18 @@ int btree::GetHeight()
 
 /// @brief 层序遍历打印树
 /// 按照层序遍历的顺序从左到右、从上到下打印所有节点的数据
-void btree::PrintTree()
+template<typename T>
+void btree<T>::PrintTree()
 {
     if(root == nullptr)
     {
         return;
     }
-    queue<btnode*> q;
+    queue<btnode<T>*> q;
     q.push(root);
     while(!q.empty())
     { 
-        btnode* curr = q.front();
+        btnode<T>* curr = q.front();
         q.pop();
         cout << curr->data << " ";
         // 将子节点加入队列，保持层序遍历顺序
