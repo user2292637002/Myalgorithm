@@ -1,25 +1,6 @@
 #include<iostream>
-#include<climits>
-#include<string>
 #include<vector>
-#include<unordered_map>
-#include<map>
-#include<set>
-#include<stack>
-#include<algorithm>
-#include<queue>
-#include<functional>
 using namespace std;
-
-/*
-00 01 02 03 04
-10 11 12 13 14
-20 21 22 23 24
-30 31 32 33 34
-40 41 42 43 44
-*/
-
-
 
 class Solution
 {
@@ -28,7 +9,7 @@ public:
     {
         for (auto& interval : intervals)
         {
-            if(interval[1] < newInterval[0] || interval[0] > newInterval[1])
+            if (interval[1] < newInterval[0] || interval[0] > newInterval[1])
             {
                 continue;
             }
@@ -38,9 +19,9 @@ public:
                 newInterval[1] = max(newInterval[1], interval[1]);
                 interval[0] = -1;
                 interval[1] = -1;
-			}
+            }
         }
-		vector<vector<int>> result;
+        vector<vector<int>> result;
         bool inserted = false;
         for (auto& interval : intervals)
         {
@@ -59,30 +40,16 @@ public:
         {
             result.push_back(newInterval);
         }
-		return result;
+        return result;
     }
 
 };
-
-
-
-
 
 int main()
 {
     Solution sol;
     vector<vector<int>> intervals = { {1,2},{3,5},{6,7},{8,10},{12,16} };
-	vector<int> newInterval = { 4,8 };
-    sol.insert(intervals,newInterval);
-    
+    vector<int> newInterval = { 4,8 };
+    sol.insert(intervals, newInterval);
     return 0;
 }
-
-
-
-
-
-
-
-
-
